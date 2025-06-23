@@ -7,14 +7,43 @@
     <link href="src/styles.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>Hello 🌦️</h1>
+    <header>Alba's Weather App</header>
+    <form id="search-form">
+      <input
+        type="text"
+        placeholder="Enter a city"
+        autocomplete="off"
+        autocapitalize="on"
+        id="search-text-input"
+      />
+      <input type="submit" value="Search" />
+    </form>
+    <hr />
+    <div class="weather-app-data>">
+      <h1 id="entered-city">City</h1>
+      <p id="weather-app-details">
+        <span id="day"> Monday </span><span id="current-time"> 9:00</span>
+        <span id="description"> cloudy</span>
+        <br />
+        Humidity:
+        <span id="humitity-unit"> 52%</span>
+        Wind: <span id="wind-speed"> 6.88</span>km/h
+      </p>
+      <div id="current-temp-container">
+        <div id="curren-weather-icon">⛅</div>
+        <div id="current-tepm-display">80</div>
+        <div id="temp-unit">°F</div>
+      </div>
+    </div>
+    <hr />
+
     <footer>
       <p>
         This project was coded by
         <a href="https://github.com/RparraTZ" target="_blank">Rosalba Parra</a>
-        and is on
+        and is
         <a href="https://github.com/RparraTZ/Albas-Weather-App" target="_blank">
-          GitHub</a
+          open-source on GitHub</a
         >
         and hosted on
         <a href="https://jazzy-sopapillas-4d97e2.netlify.app/" target="_blank">
