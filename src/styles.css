@@ -2,7 +2,7 @@ body {
   background-color: #eaf6f6;
   font-family: "cabin", sans-serif;
 }
-#info-display {
+.info-display {
   background: #fcfefe;
   max-width: 600px;
   margin: 40px auto;
