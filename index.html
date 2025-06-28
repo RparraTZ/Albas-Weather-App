@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="info-display">
-      <header>Alba's Weather App</header>
+      <header>My Weather App</header>
       <form class="search-form">
         <input
           class="search-input"
@@ -24,24 +24,27 @@
         />
         <input class="search-button" type="submit" value="Search" />
       </form>
-      <hr />
-      <div class="weather-app-data>">
-        <h1 id="entered-city">City</h1>
-        <p id="weather-app-details">
-          <span id="day"> Monday </span><span id="current-time"> 9:00</span>
-          <span id="description"> cloudy</span>
-          <br />
-          Humidity:
-          <span id="humitity-unit"> 52%</span>
-          Wind: <span id="wind-speed"> 6.88</span>km/h
-        </p>
+
+      <div class="weather-app-data">
+        <div class="city-description-data">
+          <h1 id="entered-city">City</h1>
+          <p class="weather-app-details">
+            <span id="now-day"> Monday </span><span id="now-time"> 9:00, </span>
+            <span id="description"> cloudy</span>
+            <br />
+            Humidity:
+            <span id="humidity-unit"><strong> 52% </strong></span>, Wind:
+            <span id="wind-speed"> <strong>6.88</strong></span
+            >mph
+          </p>
+        </div>
         <div id="current-temp-container">
-          <div id="curren-weather-icon">⛅</div>
-          <div id="current-tepm-display">80</div>
-          <div id="temp-unit">°F</div>
+          <span id="curren-weather-icon">⛅</span>
+          <span id="current-tepm-display">80</span>
+          <span id="temp-unit">°F</span>
         </div>
       </div>
-      <hr />
+
       <footer>
         <p>
           This project was coded by
