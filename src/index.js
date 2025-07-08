@@ -1,15 +1,38 @@
 function displayWeatherData(response) {
   let currentTemp = Math.round(response.data.temperature.current);
-  currentTempDisplay.innerHTML = currentTemp;
   let cityNameDisplay = response.data.city;
-  cityElement.innerHTML = cityNameDisplay;
   let currentConditionDesc = response.data.condition.description;
   let currentHumidity = response.data.temperature.humidity;
   let currentWindSpeed = response.data.wind.speed;
+  let daynTimeElement = document.querySelector("#dayTimeElement");
+  let timestamp = response.data.time * 1000;
+  let date = new Date(timestamp);
+
+  currentTempDisplay.innerHTML = currentTemp;
+  cityElement.innerHTML = cityNameDisplay;
   descriptionElement.innerHTML = currentConditionDesc;
   humidityRate.innerHTML = `${currentHumidity} %`;
   windSpeed.innerHTML = `${currentWindSpeed} mph`;
-  formatDate(response.data.time);
+  daynTimeElement.innerHTML = formattedDate(date);
+}
+function formattedDate(date) {
+  let hour = date.getHours();
+  let minutes = date.getMinutes();
+  let dayNames = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = dayNames[date.getDay()];
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${day} ${hour}:${minutes},`;
 }
 function searchCity(city) {
   let apiKey = "18o7a0b8f4af4db5fa386d3ft8f43fea";
@@ -20,14 +43,6 @@ function handleSearchSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-input");
   searchCity(searchInput.value);
-}
-function formatDate(date) {
-  now = new date();
-  day = now.getDay();
-  console.log(day);
-  //let now=
-
-  //let dayNames=["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 }
 let searchForm = document.querySelector("#search-form");
 let currentTempDisplay = document.querySelector("#current-tepm-display");
