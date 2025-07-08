@@ -7,7 +7,9 @@ function displayWeatherData(response) {
   let daynTimeElement = document.querySelector("#dayTimeElement");
   let timestamp = response.data.time * 1000;
   let date = new Date(timestamp);
+  let iconElement = document.querySelector("#icon");
 
+  icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="current-weather-icon" />`;
   currentTempDisplay.innerHTML = currentTemp;
   cityElement.innerHTML = cityNameDisplay;
   descriptionElement.innerHTML = currentConditionDesc;
@@ -50,5 +52,5 @@ let cityElement = document.querySelector("#display-city");
 let descriptionElement = document.querySelector("#description");
 let humidityRate = document.querySelector("#humidity-unit");
 let windSpeed = document.querySelector("#wind-speed");
-//console.log(windSpeed);
+
 searchForm.addEventListener("submit", handleSearchSubmit);

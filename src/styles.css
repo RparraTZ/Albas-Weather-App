@@ -56,10 +56,14 @@ h1 {
   font-weight: bold;
   color: #f76b8a;
 }
-#curren-weather-icon {
-  font-size: 45px;
+#current-temp-container {
+  display: flex;
+  justify-content: space-between;
+}
+.current-weather-icon {
+  width: 88px;
   position: relative;
-  top: -20px;
+  top: 15px;
 }
 #current-tepm-display {
   font-size: 88px;
@@ -68,7 +72,7 @@ h1 {
 #temp-unit {
   font-size: 28px;
   position: relative;
-  top: -35px;
+  top: 20px;
 }
 
 footer {
