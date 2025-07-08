@@ -51,7 +51,9 @@ h1 {
   color: rgba(39, 33, 66, 0.5);
 }
 
-.city-description-data strong {
+#humidity-unit,
+#wind-speed {
+  font-weight: bold;
   color: #f76b8a;
 }
 #curren-weather-icon {
