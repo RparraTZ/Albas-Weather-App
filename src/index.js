@@ -46,6 +46,25 @@ function handleSearchSubmit(event) {
   let searchInput = document.querySelector("#search-input");
   searchCity(searchInput.value);
 }
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="forecast-day-containers">
+            <div class="forecast-days">${day}</div>
+            <div class="forecast-icon">🌦️</div>
+            <div class="forecast-hilow">
+              <div class="forecast-hi-Temp">19°</div>
+              <div class="forecast-low-temp">10°</div>
+            </div>
+          </div>`;
+  });
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let searchForm = document.querySelector("#search-form");
 let currentTempDisplay = document.querySelector("#current-tepm-display");
 let cityElement = document.querySelector("#display-city");
@@ -54,3 +73,4 @@ let humidityRate = document.querySelector("#humidity-unit");
 let windSpeed = document.querySelector("#wind-speed");
 
 searchForm.addEventListener("submit", handleSearchSubmit);
+displayForecast();

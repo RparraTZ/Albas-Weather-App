@@ -74,7 +74,7 @@ h1 {
   position: relative;
   top: 20px;
 }
-#forecast-container {
+.forecast-container {
   display: flex;
   justify-content: space-evenly;
   margin: 15px 0;
