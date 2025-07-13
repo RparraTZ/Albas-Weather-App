@@ -16,6 +16,8 @@ function displayWeatherData(response) {
   humidityRate.innerHTML = `${currentHumidity} %`;
   windSpeed.innerHTML = `${currentWindSpeed} mph`;
   daynTimeElement.innerHTML = formattedDate(date);
+
+  getForecast(response.data.city);
 }
 function formattedDate(date) {
   let hour = date.getHours();
@@ -46,7 +48,14 @@ function handleSearchSubmit(event) {
   let searchInput = document.querySelector("#search-input");
   searchCity(searchInput.value);
 }
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "18o7a0b8f4af4db5fa386d3ft8f43fea";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
+function displayForecast(response) {
+  console.log(response.data);
+
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
   days.forEach(function (day) {
@@ -73,4 +82,6 @@ let humidityRate = document.querySelector("#humidity-unit");
 let windSpeed = document.querySelector("#wind-speed");
 
 searchForm.addEventListener("submit", handleSearchSubmit);
+searchCity("Ontario");
+getForecast("Ontario");
 displayForecast();
