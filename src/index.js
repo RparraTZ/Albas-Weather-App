@@ -83,5 +83,3 @@ let windSpeed = document.querySelector("#wind-speed");
 
 searchForm.addEventListener("submit", handleSearchSubmit);
 searchCity("Ontario");
-getForecast("Ontario");
-displayForecast();
